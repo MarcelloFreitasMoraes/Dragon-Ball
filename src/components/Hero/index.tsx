@@ -51,11 +51,11 @@ export default function Hero() {
                 <>
                   <S.Box>
                     <S.Name>
-                      <p>{item.name}</p>
+                      <p>{item?.name}</p>
                     </S.Name>
                     <S.Card onClick={() => router.push(`/Details?id=${item.id}`)}>
                       <S.Img
-                        src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                        src={`${item?.thumbnail?.path}.${item?.thumbnail?.extension}`}
                       />
                     </S.Card>
                   </S.Box>

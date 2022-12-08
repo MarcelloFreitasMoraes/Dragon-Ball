@@ -1,18 +1,12 @@
+/* eslint-disable react/jsx-key */
 import axios from "axios";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import {
-  Fragment,
-  JSXElementConstructor,
-  Key,
-  ReactElement,
-  ReactFragment,
-  ReactPortal,
+import { 
   useEffect,
   useState,
 } from "react";
 import * as S from "../../../styles/styled.information";
-import Text from "../Text";
 import Title from "../Title";
 
 export default function Information() {
@@ -58,134 +52,61 @@ export default function Information() {
         <S.Voltar src={"/voltar.png"} onClick={() => router.push("/")} />
       </S.Link>
       {data &&
-        Object.values(data).map((item: any, index) => {
+        Object.values(data).map((hero: any) => {
           return (
-            <Fragment key={index}>
-              <S.Name>
-                <p>{item.name}</p>
-              </S.Name>
-
-              <S.Box>
-                <S.Img
-                  alt="heroi"
-                  src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                />
-                <S.Img>
-                  {item.description ? item.description : "Sem informações"}
-                </S.Img>
-              </S.Box>
-              <S.Characters>
-                {/* {item.comics.returned !== 0 && (
-                  <Fragment>
-                    <Text label={"Comics"} />
-                    {item.comics.items.map(
-                      (
-                        characters: {
-                          name:
-                            | string
-                            | number
-                            | boolean
-                            | ReactElement<
-                                any,
-                                string | JSXElementConstructor<any>
-                              >
-                            | ReactFragment
-                            | ReactPortal
-                            | null
-                            | undefined;
-                        },
-                        index: Key | null | undefined
-                      ) => {
-                        return <p key={index}>{characters.name}</p>;
-                      }
-                    )}
-                  </Fragment>
-                )}
-
-                {item.events.returned !== 0 && (
-                  <Fragment>
-                    <Text label={"Eventos"} />
-                    {item.events.items.map(
-                      (
-                        characters: {
-                          name:
-                            | string
-                            | number
-                            | boolean
-                            | ReactFragment
-                            | ReactPortal
-                            | ReactElement<
-                                any,
-                                string | JSXElementConstructor<any>
-                              >
-                            | null
-                            | undefined;
-                        },
-                        index: Key | null | undefined
-                      ) => {
-                        return <p key={index}>{characters.name}</p>;
-                      }
-                    )}
-                  </Fragment>
-                )}
-
-                {item.series.returned !== 0 && (
-                  <Fragment>
-                    <Text label={"Séries"} />
-                    {item.series.items.map(
-                      (
-                        characters: {
-                          name:
-                            | string
-                            | number
-                            | boolean
-                            | ReactFragment
-                            | ReactPortal
-                            | ReactElement<
-                                any,
-                                string | JSXElementConstructor<any>
-                              >
-                            | null
-                            | undefined;
-                        },
-                        index: Key | null | undefined
-                      ) => {
-                        return <p key={index}>{characters.name}</p>;
-                      }
-                    )}
-                  </Fragment>
-                )}
-
-                {item.stories.returned !== 0 && (
-                  <Fragment>
-                    <Text label={"História"} />
-                    {item.stories.items.map(
-                      (
-                        characters: {
-                          name:
-                            | string
-                            | number
-                            | boolean
-                            | ReactFragment
-                            | ReactPortal
-                            | ReactElement<
-                                any,
-                                string | JSXElementConstructor<any>
-                              >
-                            | null
-                            | undefined;
-                        },
-                        index: Key | null | undefined
-                      ) => {
-                        return <p key={index}>{characters.name}</p>;
-                      }
-                    )}
-                  </Fragment>
-                )} */}
-              </S.Characters>
-            </Fragment>
-          );
-        })}
+            <>
+             <S.BlockHeroInterno>
+                          <img src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}/>  
+                          <S.BlockTxt>
+                            <h1>{hero.name}</h1>
+                            <p>{hero.description ? hero.description : 'No Infos'}</p>                            
+                          </S.BlockTxt>                    
+                    </S.BlockHeroInterno>
+                    <S.ContentApparition>
+                      {hero.comics.returned !== 0 && (
+                        <S.BlockApparition>
+                        <p>Comics</p>
+                        {hero.comics.items.map((comics:any) => {
+                          return (
+                              <li>{comics.name ? comics.name : 'No Infos'}</li>                        
+                          );
+                        })}
+                        </S.BlockApparition>
+                      )}
+                      {hero.events.returned !== 0 && (
+                        <S.BlockApparition>
+                        <p>Eventos</p>
+                        {hero.events.items.map((events:any) => {
+                          return (
+                              <li>{events.name ? events.name : 'No Infos'}</li>                        
+                          );
+                        })}
+                        </S.BlockApparition>
+                      )}                    
+                      {hero.series.returned !== 0 && (
+                        <S.BlockApparition>
+                        <p>Séries</p>
+                        {hero.series.items.map((series:any) => {
+                          return (
+                              <li>{series.name ? series.name : 'No Infos'}</li>                        
+                          );
+                        })}
+                        </S.BlockApparition>
+                      )} 
+                      {hero.stories.returned !== 0 && (
+                        <S.BlockApparition>
+                        <p>Histórias</p>
+                        {hero.stories.items.map((stories:any) => {
+                          return (
+                              <li>{stories.name ? stories.name : 'No Infos'}</li>                        
+                          );
+                        })}
+                        </S.BlockApparition>
+                         )}  
+                         </S.ContentApparition>                          
+                         </>
+                );               
+              })}    
         </S.Back>
     </S.Container>
   );
