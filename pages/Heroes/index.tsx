@@ -1,8 +1,5 @@
 import Hero from "../../src/components/Hero";
 
 export default function Heroes() {
-  
-  return (
-   <Hero/>
-  );
+  return <Hero />;
 }

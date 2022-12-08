@@ -1,14 +1,13 @@
 import * as S from "../../../styles/styled.index";
 import Head from "next/head";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import Title from "../Title";
 import { useState } from "react";
 
 export default function Home() {
-
-    const router = useRouter()
-    const [hero, setHero] = useState('')
+  const [hero, setHero] = useState("");
   const [namePerson, setNamePerson] = useState();
+  const router = useRouter();
 
   return (
     <S.Container>
@@ -20,16 +19,26 @@ export default function Home() {
         </Head>
         <S.Contant>
           <S.Box>
-          <Title 
-          text={'Meus Heroes'}
-          />
-          <S.Input type="text" onChange={(e:any) => setNamePerson(e.target.value)} value={namePerson} />
+            <Title text={"MySuperHero"} />
+            <div>
+              <S.Input
+                type="text"
+                placeholder="Enter the hero name..."
+                onChange={(e: any) => setNamePerson(e.target.value)}
+                value={namePerson}
+              />
+
+              <S.Button
+                onClick={() => {
+                  setHero(hero);
+                  router.push(`/Heroes?name=${namePerson}`);
+                }}
+                disabled={!namePerson}
+              >
+                Buscar
+              </S.Button>
+            </div>
           </S.Box>
-          <S.Button onClick={() => {
-            setHero(hero)
-            router.push(`/Heroes?name=${namePerson}`)          
-          }}
-            >Buscar</S.Button>
         </S.Contant>
       </S.Back>
     </S.Container>
