@@ -1,9 +1,7 @@
 import axios from "axios";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import * as S from "../../../styles/styled.information";
-import Title from "../Title";
 
 export default function Information() {
   const [data, setdata] = useState();
@@ -22,28 +20,16 @@ export default function Information() {
       .then((response) => {
         setdata(response?.data?.data?.results);
       });
-  }, []);
+  }, [id]);
 
   return (
-    <S.Container>
-      <S.Back>
-        <Head>
-          <title>Detalhes</title>
-          <meta name="Detalhes" content="Projeto Marvel-Studio" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <S.Text>
-          <Title text={"MySuperHero"} />
-        </S.Text>
-        <S.Link>
-          <S.Voltar src={"/voltar.png"} onClick={() => router.push("/")} />
-        </S.Link>
+    <div className="container"> 
         {data &&
           Object.values(data).map((hero: any) => {
             return (
               <>
                 <S.BlockHeroInterno>
-                  <img
+                  <S.Img2
                     src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
                   />
                   <S.BlockTxt>
@@ -57,7 +43,9 @@ export default function Information() {
                       <p>Comics</p>
                       {hero.comics.items.map((comics: any) => {
                         return (
+                          <>
                           <li>{comics.name ? comics.name : "No Infos"}</li>
+                          </>
                         );
                       })}
                     </S.BlockApparition>
@@ -67,7 +55,9 @@ export default function Information() {
                       <p>Eventos</p>
                       {hero.events.items.map((events: any) => {
                         return (
+                          <>
                           <li>{events.name ? events.name : "No Infos"}</li>
+                          </>
                         );
                       })}
                     </S.BlockApparition>
@@ -77,7 +67,9 @@ export default function Information() {
                       <p>Séries</p>
                       {hero.series.items.map((series: any) => {
                         return (
+                          <>
                           <li>{series.name ? series.name : "No Infos"}</li>
+                          </>
                         );
                       })}
                     </S.BlockApparition>
@@ -87,7 +79,9 @@ export default function Information() {
                       <p>Histórias</p>
                       {hero.stories.items.map((stories: any) => {
                         return (
+                          <>
                           <li>{stories.name ? stories.name : "No Infos"}</li>
+                          </>
                         );
                       })}
                     </S.BlockApparition>
@@ -96,7 +90,6 @@ export default function Information() {
               </>
             );
           })}
-      </S.Back>
-    </S.Container>
+    </div>
   );
 }
