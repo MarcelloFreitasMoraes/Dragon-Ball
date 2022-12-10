@@ -4,7 +4,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { AiFillFacebook } from "react-icons/ai";
 
 export const Footer = styled.footer`
-  background-color: var(--blue-dark);
+  background-color: var(--blue-darksky);
 
   height: 3em;
 

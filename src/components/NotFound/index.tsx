@@ -18,7 +18,7 @@ export function NotFoundComponent() {
           <Image src={error} width={450} height={200} alt="DeadPool" />
           <h1>Desculpe, mas a sua pesquisa não existe aqui nesse site!</h1>
           <ButtonComponent
-            title="Voltar para home"
+            title="Voltar"
             type="button"
             onClick={redirectToHome}
           />

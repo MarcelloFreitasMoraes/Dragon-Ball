@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 
         --gradient: linear-gradient(to right, var(--red-700), var(--red-400));
         --blue-dark: #0a0f19;
+        --blue-darksky: #5E6D8C;
 
 
         //Fonts
@@ -59,7 +60,6 @@ export const GlobalStyle = createGlobalStyle`
     .container {
         max-width: 1140px;
         width: 100%;
-
         margin: 0 auto;
         padding: 0 2rem;
     }

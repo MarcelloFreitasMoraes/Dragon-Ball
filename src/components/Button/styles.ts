@@ -3,8 +3,8 @@ import { IPrimaryProps } from "./type";
 
 export const Content = styled.button<IPrimaryProps>`
     height: 3rem;
-    width: 100%;
-
+    width: 220px;
+border-radius: 50.5px;
     font-size: 1rem;
 
     display: flex;
