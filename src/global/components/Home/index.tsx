@@ -1,4 +1,4 @@
-import * as S from "../../../styles/styled.index";
+import * as S from "../../../../styles/styled.index";
 import Head from "next/head";
 import { FormComponent } from "../Form";
 import { TypographicComponent } from "../Typographic";

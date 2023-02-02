@@ -6,7 +6,7 @@ export const Content = styled.button<IPrimaryProps>`
     width: 220px;
 border-radius: 50.5px;
     font-size: 1rem;
-
+cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;

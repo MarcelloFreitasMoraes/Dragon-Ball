@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import * as S from "../../../styles/styled.information";
+import * as S from "../../../../styles/styled.information";
 
 export default function Information() {
   const [data, setdata] = useState();
@@ -21,6 +21,7 @@ export default function Information() {
         setdata(response?.data?.data?.results);
       });
   }, [id]);
+console.log(data, 'information');
 
   return (
     <div className="container"> 

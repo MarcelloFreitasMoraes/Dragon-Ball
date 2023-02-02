@@ -1,5 +1,5 @@
-import * as S from "../../../styles/styled.hero";
-import { useEffect, useState } from "react";
+import * as S from "../../../../styles/styled.hero";
+import { SetStateAction, useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { LoadingComponent } from "../Loading";
@@ -8,8 +8,8 @@ import { TypographicComponent } from "../Typographic";
 import { SelectHeroComponent } from "../SelectHero";
 import { PaginationComponent } from "../Pagination";
 import { HeaderComponent } from "../Header";
-import { IContentHeroesProps } from "../../../types/result";
 import { SelectOptionsComponent } from "../SelectOptions";
+import { IContentHeroesProps } from "../../@types/result";
 
 export default function Hero() {
   const [search, setSearch] = useState<IContentHeroesProps[]>([]);
@@ -30,14 +30,15 @@ export default function Hero() {
     setLoading(true);
     axios
       .get(baseURL)
-      .then((response) => {
+      .then((response: { data: { data: { results: SetStateAction<IContentHeroesProps[]>; }; }; }) => {
         setSearch(response?.data?.data?.results)
         setLoading(false);
       })
-      .catch((error) => {
+      .catch((error: { toJSON: () => any; }) => {
         console.log(error.toJSON());
       });
   }, [name, nameHeroes]);
+console.log(search, '2 pagina');
 
   const resultSearchTitle = () => {
     return (

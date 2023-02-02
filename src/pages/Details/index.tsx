@@ -1,4 +1,4 @@
-import Information from "../../src/components/Information";
+import Information from "../../global/components/Information";
 
 export default function Details() {
   return (
