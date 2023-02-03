@@ -38,7 +38,15 @@ export default function Hero() {
         console.log(error.toJSON());
       });
   }, [name, nameHeroes]);
-console.log(search, '2 pagina');
+
+  useEffect(() => {
+    setCurrentPage(0)
+  }, [itensPerPage]);
+
+  const pages = Math.ceil(search.length / itensPerPage);
+  const startIndex = currentPage * itensPerPage;
+  const endIndex = startIndex + itensPerPage;
+  const currentItens = search.slice(startIndex, endIndex);
 
   const resultSearchTitle = () => {
     return (
@@ -51,15 +59,6 @@ console.log(search, '2 pagina');
       </S.Heading>
     );
   };
-
-  useEffect(() => {
-    setCurrentPage(0)
-  }, [itensPerPage]);
-
-  const pages = Math.ceil(search.length / itensPerPage);
-  const startIndex = currentPage * itensPerPage;
-  const endIndex = startIndex + itensPerPage;
-  const currentItens = search.slice(startIndex, endIndex);
 
   return (
     <>
