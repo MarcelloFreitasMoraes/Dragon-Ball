@@ -3,7 +3,7 @@ import * as S from "./styles";
 import { TypographicComponent } from "../../components/Typographic";
 
 import Link from "next/link";
-import { IContentDataProps } from "../../global/@types/result";
+import { IContentDataProps } from "../../@types/result";
 
 export function SelectHeroComponent({ data }: IContentDataProps) {
 
