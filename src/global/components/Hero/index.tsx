@@ -62,9 +62,9 @@ export default function Hero() {
   };
 
   return (
-    <>
-      <HeaderComponent isSearch />
-      <div className="container">
+    <div className="container">
+        <>
+      <HeaderComponent />
         {resultSearchTitle()}
         {loading ? (
           <LoadingComponent />
@@ -82,8 +82,8 @@ export default function Hero() {
           </>
         )}
         <PaginationComponent pages={pages} setCurrentPage={setCurrentPage} currentPage={currentPage} />
+    </>
       </div>
 
-    </>
   );
 }

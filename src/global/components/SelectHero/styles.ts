@@ -7,7 +7,7 @@ export const Content = styled.li`
     padding: 1rem;
 
     max-width: 350px;
-    width: 100%;
+    width: auto;
 
     border-radius: var(--border-r);
     transition: background-color 0.2s;
@@ -15,6 +15,7 @@ export const Content = styled.li`
     &:hover {
         background-color: rgba(0, 0, 0, 0.8);
     }
+
 `
 
 export const Container = styled.div``
