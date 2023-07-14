@@ -21,6 +21,17 @@ export default function Information() {
         setdata(response?.data?.data?.results);
       });
   }, [id]);
+
+  const searchId = async (id: string) => {
+    try {
+        const response = await axios.get(
+            `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=1&apikey=06ead66137452ef75685fcdc895a6c0b&hash=2774d42849c52a2ec23f9b2298e41e7a`);
+        return response.data;
+    } catch (error) {
+        console.error('Erro na busca do herói:', error);
+        throw error;
+    }
+};
 console.log(data, 'information');
 
   return (
