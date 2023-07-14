@@ -26,10 +26,11 @@ export default function Hero() {
   }), [];
 
   useEffect(() => {
-    const baseURL = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${name}&ts=1&apikey=dfdfc06935a1fe33837da6934f7b5373&hash=f5a214e5c63b897dfe0ebc1a1185c936`;
+    const BASE_URL = process.env.NEXT_PUBLIC_RESULT_BASE_URL
+    const EXTENSION_URL = process.env.NEXT_PUBLIC_RESULT_EXTENSION_URL
     setLoading(true);
     axios
-      .get(baseURL)
+      .get(`${BASE_URL}${name}${EXTENSION_URL}`)
       .then((response: { data: { data: { results: SetStateAction<IContentHeroesProps[]>; }; }; }) => {
         setSearch(response?.data?.data?.results)
         setLoading(false);
@@ -62,7 +63,7 @@ export default function Hero() {
 
   return (
     <>
-      <HeaderComponent />
+      <HeaderComponent isSearch />
       <div className="container">
         {resultSearchTitle()}
         {loading ? (
