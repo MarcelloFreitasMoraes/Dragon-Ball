@@ -26,7 +26,7 @@ export default function Hero() {
   }), [];
 
   useEffect(() => {
-    const baseURL = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${name}&ts=1&apikey=dfdfc06935a1fe33837da6934f7b5373&hash=f5a214e5c63b897dfe0ebc1a1185c936`;
+    const baseURL = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${name}&ts=1&apikey=dfdfc06935a1fe33837da6934f7b5373&hash=f5a214e5c63b897dfe0ebc1a1185c936`;
     setLoading(true);
     axios
       .get(baseURL)
