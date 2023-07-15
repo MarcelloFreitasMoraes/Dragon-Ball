@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { IStyledProps } from "./type"
+import styled from 'styled-components'
+import { IStyledProps } from './type'
 
 export const Pagination = styled.ul`
     height: 5rem;
@@ -19,7 +19,10 @@ export const Button = styled.button<IStyledProps>`
     align-items: center;
     justify-content: center;
 
-    background-color: ${(props) => props.index === props.currentPage ? 'var(--red-400)' : 'var(--red-700)'};
+    background-color: ${(props) =>
+        props.index === props.currentPage
+            ? 'var(--red-400)'
+            : 'var(--red-700)'};
     color: var(--light);
 
     margin-right: 0.5rem;

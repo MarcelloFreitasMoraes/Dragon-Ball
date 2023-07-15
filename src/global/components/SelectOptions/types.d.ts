@@ -1,6 +1,6 @@
-import React, { SetStateAction } from 'react';
+import React, { SetStateAction } from 'react'
 
 export interface INumbersProps {
-    itensPerPage: number;
-    setItensPerPage: React.Dispatch<SetStateAction<number>>;
+    itensPerPage: number
+    setItensPerPage: React.Dispatch<SetStateAction<number>>
 }

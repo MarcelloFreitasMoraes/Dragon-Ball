@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { FaEnvelope } from 'react-icons/fa'
 
@@ -14,7 +14,7 @@ export const InputField = styled.div`
 
     border-radius: 0.25rem;
 
-    box-shadow: 2px 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
 
     input {
         height: 100%;
@@ -36,14 +36,14 @@ export const InputField = styled.div`
 
 export const SearchIcon = styled(AiOutlineSearch)`
     font-size: var(--font-size-default);
-    
+
     cursor: pointer;
 `
 
 export const SendIcon = styled(FaEnvelope)`
-  font-size: var(--font-size-default);
+    font-size: var(--font-size-default);
 
-  color: rgba(0,0,0,0.5);
-    
-  cursor: pointer;
+    color: rgba(0, 0, 0, 0.5);
+
+    cursor: pointer;
 `

@@ -1,13 +1,13 @@
-import Link from "next/link";
+import Link from 'next/link'
 
-import Logo from '../../assets/vector.svg';
+import Logo from '../../assets/vector.svg'
 
-import { LogoImage } from "./styles";
+import { LogoImage } from './styles'
 
 export function LogoComponent() {
-  return (
-    <Link href="/" passHref>
-      <LogoImage src={Logo} alt="Marvel" width={150} height={80} />
-    </Link>
-  )
+    return (
+        <Link href="/" passHref>
+            <LogoImage src={Logo} alt="Marvel" width={150} height={80} />
+        </Link>
+    )
 }

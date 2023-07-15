@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { MdClose } from 'react-icons/md';
-import { IModalDarkProps } from './type';
+import { MdClose } from 'react-icons/md'
+import { IModalDarkProps } from './type'
 
 export const Background = styled.div`
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
 
     position: fixed;
     top: 0;
@@ -21,7 +21,8 @@ export const Background = styled.div`
 export const Content = styled.div<IModalDarkProps>`
     max-width: 550px;
     width: 100%;
-    background: ${(props) => props.isModalDark ? 'var(--blue-dark)' : 'var(--light)'};
+    background: ${(props) =>
+        props.isModalDark ? 'var(--blue-dark)' : 'var(--light)'};
 
     position: relative;
     z-index: 10;
@@ -38,14 +39,15 @@ export const Content = styled.div<IModalDarkProps>`
     }
 `
 
-export const Close = styled(MdClose) <IModalDarkProps>`
+export const Close = styled(MdClose)<IModalDarkProps>`
     position: absolute;
 
     right: 0.8rem;
     top: 0.8rem;
 
     font-size: 1.5rem;
-    color: ${(props) => props.isModalDark ? 'var(--light)' : 'var(--blue-dark)'};
+    color: ${(props) =>
+        props.isModalDark ? 'var(--light)' : 'var(--blue-dark)'};
 
     cursor: pointer;
 

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Main = styled.main`
     display: flex;
@@ -20,7 +20,7 @@ export const GroupLeft = styled.section`
 
         h4 {
             color: white;
-            
+
             text-transform: uppercase;
 
             font-weight: 900;
@@ -28,10 +28,9 @@ export const GroupLeft = styled.section`
             margin: 1rem 0;
         }
 
-
         h1 {
             color: white;
-            
+
             font-size: 48px;
             font-weight: 900;
             line-height: 3rem;
@@ -48,7 +47,6 @@ export const GroupLeft = styled.section`
             margin-bottom: 1rem;
         }
     }
-
 
     @media (max-width: 768px) {
         > div {
@@ -80,7 +78,7 @@ export const GroupRight = styled.section`
     align-items: center;
 
     background-color: var(--blue-dark);
-    box-shadow: -10px 3px 15px rgba(0,0,0,0.5);
+    box-shadow: -10px 3px 15px rgba(0, 0, 0, 0.5);
 
     div {
         position: absolute;

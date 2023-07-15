@@ -1,5 +1,5 @@
-import Image from "next/image";
-import styled from "styled-components";
+import Image from 'next/image'
+import styled from 'styled-components'
 
 export const Content = styled.li`
     background-color: rgba(0, 0, 0, 0.5);
@@ -15,7 +15,6 @@ export const Content = styled.li`
     &:hover {
         background-color: rgba(0, 0, 0, 0.8);
     }
-
 `
 
 export const Container = styled.div``
@@ -53,7 +52,7 @@ export const FooterInfo = styled.div`
 
         font-weight: 600;
     }
-`;
+`
 
 export const Id = styled.div``
 

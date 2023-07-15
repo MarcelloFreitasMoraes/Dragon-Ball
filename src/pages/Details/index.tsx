@@ -1,7 +1,5 @@
-import Information from "../../global/components/Information";
+import Information from '../../global/components/Information'
 
 export default function Details() {
-  return (
-   <Information/>
-  );
+    return <Information />
 }

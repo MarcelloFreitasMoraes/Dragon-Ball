@@ -1,4 +1,4 @@
 export interface IConditionProps {
-    isSearch?: boolean;
-    isSend?: boolean;
+    isSearch?: boolean
+    isSend?: boolean
 }

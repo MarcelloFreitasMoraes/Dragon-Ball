@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Content = styled.header`
     height: 5rem;
@@ -10,8 +10,7 @@ export const Content = styled.header`
 
     @media (max-width: 992px) {
         > div {
-    justify-content: center;
+            justify-content: center;
+        }
     }
-    }
-    
 `

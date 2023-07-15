@@ -1,13 +1,13 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react'
 
 export interface IOpenProps {
-    isOpen?: () => void;
-    handleKeyPress?: any;
-    children: ReactNode;
-    isModalDark?: boolean;
-    animation: {};
+    isOpen?: () => void
+    handleKeyPress?: any
+    children: ReactNode
+    isModalDark?: boolean
+    animation: {}
 }
 
 export interface IModalDarkProps {
-    isModalDark?: boolean;
+    isModalDark?: boolean
 }

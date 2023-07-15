@@ -1,40 +1,40 @@
 export interface Hero {
     comics: {
-        available: number;
-        collectionURI: string;
-        items: ItemsProps;
-        returned: number;
+        available: number
+        collectionURI: string
+        items: ItemsProps
+        returned: number
     }
-    description: string;
+    description: string
     events: {
-        available: number;
-        collectionURI: string;
-        items: ItemsProps;
-        returned: number;
+        available: number
+        collectionURI: string
+        items: ItemsProps
+        returned: number
     }
-    id: number;
-    modified: string;
-    name: string;
-    resourceURI: string;
+    id: number
+    modified: string
+    name: string
+    resourceURI: string
     series: {
-        available: number;
-        collectionURI: string;
-        items: ItemsProps;
-        returned: number;
+        available: number
+        collectionURI: string
+        items: ItemsProps
+        returned: number
     }
     stories: {
-        available: number;
-        collectionURI: string;
-        items: ItemsProps;
-        returned: number;
+        available: number
+        collectionURI: string
+        items: ItemsProps
+        returned: number
     }
     thumbnail: {
-        path: string;
-        extension: string;
+        path: string
+        extension: string
     }
 }
 
 export interface ItemsProps {
-    name: string;
-    resourceURI: string;
+    name: string
+    resourceURI: string
 }

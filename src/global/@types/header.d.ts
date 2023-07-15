@@ -1,3 +1,3 @@
 export interface IHeaderProps {
-  isSearch?: boolean;
+    isSearch?: boolean
 }
